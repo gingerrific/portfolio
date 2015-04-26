@@ -83,12 +83,43 @@ body {
 }
 
 .nav-icons li {
-    float: left;
-    height: 12px;
-    width: 12px;
-    margin: 5px 0 0 7px;
+    position: absolute;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
     background: blue;
+    top: 25px;
+    font-size: .8em;
+    line-height: 20px;
+    cursor: default;
+    &:first-of-type {
+        left: 20px;
+        background: red;
+        color: red;
+        &:hover {
+            color: black;
+        }
+    }
+
+    &:nth-of-type(2) {
+        left: 50px;
+        font-weight: bold;
+        background: yellow;
+        color: yellow;
+        &:hover {
+            color: black;
+        }
+
+    }
+
+    &:last-of-type {
+        left: 80px;
+        background: green;
+        color: green;
+        &:hover {
+            color: black;
+        }
+    }
 }
 
 .name {
@@ -153,12 +184,18 @@ body {
     animation-name: workSlide;
     animation-duration: 1.6s;
     font-family: "Savu-Condensed";
-
+    cursor: pointer;
     box-shadow: 3px 3px 4px rgba(0,0,0,.4);
+
     & span {
         font-size: 1.6em;
         display: block;
-        // margin-top: 15px;
+        transition: all .3s ease-out;
+        transform: rotateY(-180deg);
+    }
+
+    &:hover > span{
+        transform: rotateY(0deg);
     }
 }
 
@@ -192,10 +229,16 @@ body {
 
     & a {
         color: black;
+        text-decoration: none;
     }
 
     & a:visited {
         color: black;
+    }
+
+    &:hover {
+        bottom: 28px;
+        box-shadow: 2px 2px 3px rgba(0,0,0,.4);
     }
 }
 .contact1 {

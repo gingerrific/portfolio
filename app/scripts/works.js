@@ -1,14 +1,13 @@
 "use strict";
 
-
-$(".work").click(function () {
+$(".back").click(function () {
     $(".full-window").animate({
-        marginLeft: "25%"
+        marginRight: "25%"
     }, 300, function () {
         $(".full-window").animate({
-            marginLeft: "-100%"
+            marginRight: "-100%"
         }, 500, function () {
-            window.location.href = "works.html"
+            window.location.href = "index.html"
         })
     })
 })

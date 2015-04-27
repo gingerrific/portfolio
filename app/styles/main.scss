@@ -33,9 +33,9 @@ body {
 .full-window {
     width: 75%;
     min-width: 900px;
+    max-width: 1330px;
     height: 550px;
     margin: 50px auto 0;
-    background: white;
     position: relative;
     text-align: center;
     background: $portfolio_white;
@@ -60,7 +60,7 @@ body {
     height: 70px;
     background: darken(white, 10%);
     position: absolute;
-    // top: 0;
+    z-index: 2;
 
     animation-name: headerSlide;
     animation-duration: 1.1s;
@@ -80,6 +80,10 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+
+    &:hover .fa {
+        color: black;
+    }
 }
 
 .nav-icons li {
@@ -91,34 +95,26 @@ body {
     top: 25px;
     font-size: .8em;
     line-height: 20px;
-    cursor: default;
+    cursor: pointer;
+
     &:first-of-type {
         left: 20px;
-        background: red;
-        color: red;
-        &:hover {
-            color: black;
-        }
+        background: #E55954;
+        color: #E55954;
     }
 
     &:nth-of-type(2) {
         left: 50px;
-        font-weight: bold;
-        background: yellow;
-        color: yellow;
-        &:hover {
-            color: black;
-        }
+        // font-weight: bold;
+        background: #F2B444;
+        color: #F2B444;
 
     }
 
     &:last-of-type {
         left: 80px;
-        background: green;
-        color: green;
-        &:hover {
-            color: black;
-        }
+        background: #58BD40;
+        color: #58BD40;
     }
 }
 
@@ -309,7 +305,74 @@ body {
 
 
 
+/// Works.html only css //////////////
+//////////////////////////////////////
 
+.work-content {
+    width: 100%;
+    padding: 110px 50px 20px;
+    position: relative;
+
+    height: 100%;
+    overflow: scroll;
+
+
+    &:after {
+        content: "";
+        height: 0;
+        visibility: hidden;
+        display: block;
+        clear: both;
+    }
+}
+
+.work-example {
+    width: 33%;
+    height: 250px;
+    float: left;
+    text-align: center;
+    line-height: 250px;
+    background: gray;
+    
+    &:hover {
+        background: rgba(0,0,0,.7);
+    }
+}
+
+
+.navigation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    & li {
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        top: 20px;
+        line-height: 30px;
+        font-size: 1.5em;
+        border-radius: 4px;
+        text-align: center;
+        background: darken(white, 5%);
+        box-shadow: 1px 1px 0 darken(white, 20%);
+
+
+        &:first-of-type {
+            right: 85px;
+            cursor: pointer;
+
+            &:hover {
+                top: 22px;
+                height: 28px;
+                line-height: 28px;
+            }
+        }
+        &:last-of-type {
+            right: 50px;
+            color: darken(white, 25%);
+        }
+    }
+}
 
 
 

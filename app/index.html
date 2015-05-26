@@ -16,11 +16,11 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" type="text/css" href="styles/MyFontsWebfontsKit.css">
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="../bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
-        <link rel="stylesheet" type="text/css" href="styles/MyFontsWebfontsKit.css">
         <!--
         /**
          * @license
@@ -56,12 +56,12 @@
         <![endif]-->
 
         <div class="container">
-            <div class="full-window">
+            <div class="full-window" data-minimized="false">
                 <div class="window-header">
                     <ul class="nav-icons">
-                        <li><i class="fa fa-times"></i></li>
-                        <li><i class="fa fa-minus"></i></li>
-                        <li><i class="fa fa-expand"></i></li>
+                        <li class="close-window"><i class="fa fa-times"></i></li>
+                        <li class="minimize-window"><i class="fa fa-minus"></i></li>
+                        <li class="expand-window"><i class="fa fa-expand"></i></li>
                     </ul>
                     <div class="name">Josh Date</div>
                 </div>
@@ -85,8 +85,13 @@
                 </div>
             </div>
 
+        </div>
 
-
+        <div class="easter-egg">
+            <div class="easter-egg-header">
+                <span>cats_in_front_of_fire.jpg</span>
+                <i class="fa fa-undo cats-reload"></i></div>
+            <img src="images/cats.jpg">
         </div>
 
         <!-- build:js scripts/vendor.js -->
@@ -94,16 +99,6 @@
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>

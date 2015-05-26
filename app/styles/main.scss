@@ -2,7 +2,7 @@
 //////////////////////////
 
 // $portfolio_red: #2CC38A;
-$portfolio_red: #29B781;
+$portfolio_green: #29B781;
 $portfolio_white: #FFF3FF;
 $solid_white: #fff;
 
@@ -22,12 +22,17 @@ html {
 }
 
 body {
-    background: $portfolio_red;
+    background: $portfolio_green;
+}
+
+.hidden {
+    opacity: 0;
 }
 
 .container {
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .full-window {
@@ -43,6 +48,32 @@ body {
 
     animation-name: windowSlide;
     animation-duration: .7s;
+
+    transition: all .3s linear;
+}
+
+.full-window-expanded {
+    width: 98%;
+    max-width: 98%;
+    margin-top: 5px;
+}
+
+.full-window-minimized {
+    box-shadow: none;
+}
+
+.full-window-removed {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    background-color: $portfolio_green;
+    // transition: .7s all linear;
 }
 
 @keyframes windowSlide {
@@ -60,10 +91,17 @@ body {
     height: 70px;
     background: darken(white, 10%);
     position: absolute;
+    top: 0;
     z-index: 2;
 
     animation-name: headerSlide;
     animation-duration: 1.1s;
+
+    transition: all .3s linear;
+}
+
+.window-header-minimized {
+ width: 40%;
 }
 
 @keyframes headerSlide {
@@ -119,30 +157,35 @@ body {
 }
 
 .name {
-    width: 300px;
+    width: 33%;
     position: absolute;
     left: 50%;
-    margin-left: -150px;
+    margin-left: -14%;
     font-family: "Savu-Condensed";
     font-size: 3em;
-
 }
 
+.name-minimized {
+    font-size: 1.5em;
+    line-height: 70px;
+
+    transition: all .3s linear;
+}
 
 
 .about {
     position: absolute;
-    width: 650px;
-    height: 400px;
+    width: 72%;
+    // height: 400px;
     top: 90px;
     left: 50%;
-    margin-left: -325px;
-    padding: 50px 95px;
+    margin-left: -35.5%;
+    padding: 50px 8%;
 
     font-size: 1.2em;
 
     text-align: left;
-    background: $portfolio_red;
+    background: $portfolio_green;
     color: $portfolio_white;
     font-family: "Savu-Condensed";
     animation-name: aboutSlide;
@@ -169,7 +212,7 @@ body {
     position: absolute;
     width: 150px;
     height: 150px;
-    left: 50px;
+    left: 4%;
     top: 240px;
     background: darken(white,10%);
     z-index: 1;
@@ -238,19 +281,19 @@ body {
     }
 }
 .contact1 {
-    left: 550px;
+    left: 60%;
     animation-name: contact1Slide;
     animation-duration: 1.5s;
 }
 
 .contact2 {
-    left: 640px;
+    left: 70%;
     animation-name: contact2Slide;
     animation-duration: 1.7s;
 }
 
 .contact3 {
-    left: 730px;
+    left: 80%;
     animation-name: contact3Slide;
     animation-duration: 1.6s;
 }
@@ -303,7 +346,31 @@ body {
     }
 }
 
+.easter-egg {
+    display: none;
+    width: 40%;
+    margin: 75px auto 0;
+    & .easter-egg-header {
+        height: 45px;
+        background: darken(white, 10%);
+        text-align: center;
+        line-height: 45px;
 
+        & span {
+            padding: 3px 10px;
+            margin-right: 5px;
+            background: $portfolio_white;
+        }
+
+        & i {
+            cursor: pointer;
+        }
+    }
+    & img {
+        max-width: 100%;
+        box-shadow: 2px 2px 3px rgba(0,0,0,.4);
+    }
+}
 
 /// Works.html only css //////////////
 //////////////////////////////////////

@@ -1,6 +1,7 @@
 "use strict";
 
 $(".back").click(function () {
+    $(".full-window").css({"transition": "none"});
     $(".full-window").animate({
         marginRight: "25%"
     }, 300, function () {

@@ -1,10 +1,14 @@
+* {
+  box-sizing: border-box; }
+
 body {
   background: #5B5555;
   font-family: 'PT Sans', sans-serif; }
 
 .container {
   width: 75%;
-  margin: 2em auto; }
+  margin: 2em auto;
+  min-width: 600px; }
 
 header {
   padding: 1em;
@@ -29,6 +33,8 @@ header {
     margin-right: .25em;
     font-size: 2em;
     color: #FFF3FF; }
+    header .contact-link:hover {
+      margin-top: 0; }
 
 .main-content {
   padding: 1em 4em 3em;

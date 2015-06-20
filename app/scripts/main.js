@@ -54,6 +54,7 @@ $(".minimize-window").click(function() {
 
 
 $(".close-window").click(function () {
+    // get the current "full-window" divs dimensions so content will shrink to the right place and set container to that size
     var containerHeight = $(".full-window").height() + $(".full-window").offset().top;
     var leftOffset = $(".full-window").css("margin-left");
 

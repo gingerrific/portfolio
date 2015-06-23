@@ -16,16 +16,20 @@ $(document).ready(function () {
 });
 
 $(".navigation-back").click(function () {
-    $(".full-window").css({"transition": "none"});
-    $(".full-window").animate({
-        marginRight: "25%"
-    }, 300, function () {
+    if ( $(".work-example-display").height() > 0) {
+        resetWorkExamples();
+    } else {
+        $(".full-window").css({"transition": "none"});
         $(".full-window").animate({
-            marginRight: "-100%"
-        }, 500, function () {
-            window.location.href = "index.html"
-        })
-    });
+            marginRight: "25%"
+        }, 300, function () {
+            $(".full-window").animate({
+                marginRight: "-100%"
+            }, 500, function () {
+                window.location.href = "index.html"
+            })
+        });
+    }
 });
 
 function updateWindowView () {
@@ -99,5 +103,14 @@ $(".work-example").click(function (target) {
         $(".work-example-container").addClass("work-example-minimized");
         $(".work-example-display").css({"height": workHeight * 2, "width": "100%"});
         $("."+visibleDiv).toggleClass("work-example-expanded").show();
+        $(".work-example").css({"position":"static", "float": "left"});
         $(this).addClass("no-display");
 });
+
+function resetWorkExamples () {
+    $(".no-display").removeClass("no-display")
+    $(".work-example-display").css({"height": "0"});
+    $(".work-example-display div").hide();
+    $(".work-example-expanded").removeClass("work-example-expanded");
+    $(".work-example-container").removeClass("work-example-minimized");
+}

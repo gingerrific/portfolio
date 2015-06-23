@@ -98,7 +98,7 @@ var workHeight = $(".work-example").height();
 $(".work-example").click(function (target) {
         var visibleDiv = $(this).attr("id");
         $(".no-display").removeClass("no-display");
-        $(".work-example-display div").hide();
+        $(".work-example-display > div").hide();
         $(".work-example-expanded").removeClass("work-example-expanded");
         $(".work-example-container").addClass("work-example-minimized");
         $(".work-example-display").css({"height": workHeight * 2, "width": "100%"});

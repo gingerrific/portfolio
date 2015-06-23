@@ -3,7 +3,7 @@
 
 // $portfolio_red: #2CC38A;
 $portfolio_green: #29B781;
-$portfolio_white: #FFF3FF;
+$portfolio_white: #FFFFFF;
 $solid_white: #fff;
 
 
@@ -394,6 +394,7 @@ body {
 .full-window-works {
     margin-right: -100%; 
     transition: none;
+    overflow: hidden;
 }
 
 .work-content {
@@ -418,17 +419,107 @@ body {
 }
 
 .work-example {
-    width: 33%;
+    width: 33.33%;
     height: 250px;
     position: absolute;
     top: 0;
-    text-align: center;
-    line-height: 250px;
+    margin: 0;
     background: gray;
     cursor: pointer;
-    &:hover {
-        background: rgba(0,0,0,.7);
+    z-index: 10;
+    overflow: hidden;
+    
+    & figure {
+        margin: 0;
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        & figcaption {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background: rgba(0,0,0,.7);
+            color: darken(#fff, 5%);
+            height: 40px;
+            line-height: 40px;
+            font-size: 1.25em;
+            font-weight: bold;
+            transition: all .15s linear;
+            z-index: 1;
+        }
+
+        &:hover figcaption {
+            height: 100%;
+            line-height: 80px;
+        }
     }
+}
+
+.left-col,
+.right-col {
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    & img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.right-col {
+    padding: 50px 20px 20px;
+}
+
+.button-container {
+    margin: 50px auto;
+    width: 315px;
+    position: relative;
+    height: 55px;
+
+    &:after {
+        content: "";
+        height: 0;
+        visibility: hidden;
+        display: block;
+        clear: both;
+    }
+}
+
+.view-source, 
+.view-live {
+    position: absolute;
+    bottom: 0;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 55px;
+    line-height: 35px;
+    color: darken($portfolio_white, 2%);
+    background: darken(gray, 10%);
+    box-shadow: 3px 3px 4px rgba(0,0,0, .3);
+
+    &:hover {
+        height: 52px;
+        line-height: 33px;
+        box-shadow: 3px 3px 4px rgba(0,0,0, .3);
+    }
+}
+
+.view-source {
+    margin-right: 10px;
+    left: 0;
+}
+
+.view-live {
+    right: 0;
 }
 
 #work-example-1, 
@@ -455,7 +546,7 @@ body {
     }
 
     90% {
-        left: -5%;
+        left: -7%;
     }
 
     to {
@@ -465,8 +556,8 @@ body {
 
 #work-example-2 {
     animation-name: work-slide-2;
-    animation-duration: 1.4s;
-    left: 33%;
+    animation-duration: 1.5s;
+    left: 33.33%;
 }
 
 @keyframes work-slide-2 {
@@ -475,18 +566,18 @@ body {
     }
 
     85% {
-        left: 29%;
+        left: 28%;
     }
 
     to {
-        left: 33%;
+        left: 33.33%;
     }
 }
 
 #work-example-3 {
     animation-name: work-slide-3;
     animation-duration: 1.3s;
-    left: 66%;
+    left: 66.66%;
 }
 
 @keyframes work-slide-3 {
@@ -495,11 +586,11 @@ body {
     }
 
     87% {
-        left: 61%;
+        left: 62%;
     }
 
     to {
-        left: 66%;
+        left: 66.66%;
     }
 }
 
@@ -526,7 +617,7 @@ body {
 #work-example-5 {
     animation-name: work-slide-5;
     animation-duration: 1.5s;
-    left: 33%;
+    left: 33.33%;
 }
 
 @keyframes work-slide-5 {
@@ -535,18 +626,18 @@ body {
     }
 
     83% {
-        left: 29%;
+        left: 28%;
     }
 
     to {
-        left: 33%;
+        left: 33.33%;
     }
 }
 
 #work-example-6 {
     animation-name: work-slide-6;
     animation-duration: 1.4s;
-    left: 66%;
+    left: 66.66%;
 }
 
 @keyframes work-slide-6 {
@@ -555,11 +646,11 @@ body {
     }
 
     93% {
-        left: 63%;
+        left: 62%;
     }
 
     to {
-        left: 66%;
+        left: 66.66%;
     }
 }
 
@@ -567,7 +658,7 @@ body {
     height: 0;
     width: 0;
 
-    & div {
+    & > div {
         display: none;
     }
 }
@@ -590,6 +681,11 @@ body {
         height: inherit;
         width: 20%;
         line-height: inherit;
+    }
+
+    & figcaption {
+        height: 100%;
+        line-height: 80px;
     }
 }
 
